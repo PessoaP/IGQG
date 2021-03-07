@@ -3,9 +3,9 @@ from numpy import zeros
 mp.dps = 35; mp.pretty = True
 
 def fpolylog(phi,x):
-	return re(polylog(phi,x))
+    return re(polylog(phi,x))
 def fgamma(phi):
-	return re(gamma(phi))
+    return re(gamma(phi))
 
 def A(phi,xi):
     matA = [[fgamma(phi+3)*fpolylog(phi+2,xi),fgamma(phi+2)*fpolylog(phi+1,xi)],
@@ -23,7 +23,7 @@ def Ac(phi,xi):
     #matA = [[fgamma(phi+3)*fpolylog(phi+2,xi),0],
     #        [fgamma(phi+2)*fpolylog(phi+1,xi),xi*power((1-xi),-2)]]
     #return linalg.det(matA)
-	return fgamma(phi+3)*fpolylog(phi+2,xi)*xi*power((1-xi),-2)
+    return fgamma(phi+3)*fpolylog(phi+2,xi)*xi*power((1-xi),-2)
 
 def Bc(phi,xi):
     matB = [[fgamma(phi+3)*fpolylog(phi+2,xi),fgamma(phi+2)*fpolylog(phi+1,xi),xi*power((1-xi),-2)],
